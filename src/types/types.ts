@@ -1,3 +1,5 @@
+import { NextFunction } from "express";
+
 export interface NewUserRequestBody{
     name:string,
     email:string,
@@ -8,3 +10,5 @@ export interface NewUserRequestBody{
     dob:Date,
 
 }
+
+export type ControllerType ((req: Request<{}, {}, NewUserRequestBody>, res: Response, next: NextFunction) => Promise<any>)
